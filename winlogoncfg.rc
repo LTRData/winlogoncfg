@@ -1,0 +1,119 @@
+#include "winlogoncfg.rc.h"
+
+#include <windows.h>
+
+VS_VERSION_INFO VERSIONINFO 
+FILEVERSION 0,0,3,0
+PRODUCTVERSION 0,0,3,0
+FILEFLAGSMASK VS_FFI_FILEFLAGSMASK
+FILEFLAGS 0
+FILEOS VOS_NT_WINDOWS32
+FILETYPE VFT_APP
+FILESUBTYPE 0
+{
+ BLOCK "StringFileInfo"
+ {
+  BLOCK "040904E4"
+  {
+   VALUE "CompanyName", "Olof Lagerkvist\000"
+   VALUE "FileDescription", "Winlogon Configuration Tool\000"
+   VALUE "FileVersion", "0.0.3\000"
+   VALUE "InternalName", "winlogoncfg\000"
+   VALUE "LegalCopyright", "Copyright \251 Olof Lagerkvist, 2005\000"
+   VALUE "LegalTrademarks", "\000"
+   VALUE "OriginalFilename", "winlogoncfg.exe\000"
+   VALUE "ProductName", "Winlogon Configuration Tool\000"
+   VALUE "ProductVersion", "0.03\000"
+   VALUE "PhoneNumber", "+46 70 345 89 52\000"
+   VALUE "WebAddress", "http://www.ltr-data.se\000"
+   VALUE "E-mailAddress", "olof@ltr-data.se\000"
+  }
+
+ }
+
+ BLOCK "VarFileInfo"
+ {
+  VALUE "Translation", 0x409, 1252
+ }
+
+}
+
+IDI_APPICON ICON DISCARDABLE "winlogoncfg.ico"
+
+IDD_MAINDIALOG DIALOG 78, 39, 316, 203
+EXSTYLE WS_EX_APPWINDOW
+STYLE DS_3DLOOK | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU | WS_MINIMIZEBOX
+CAPTION "Winlogon cofiguration tool"
+MENU IDM_MAINDLG_MENU
+FONT 8, "MS Sans Serif"
+{
+ CONTROL "To get help, item description and instructions, select an element and press F1 key.", IDC_STATICTEXT1, "static", SS_LEFT | WS_CHILD | WS_VISIBLE, 8, 4, 144, 16
+ CONTROL "Logon defaults", 205, "button", BS_GROUPBOX | WS_CHILD | WS_VISIBLE | WS_GROUP, 4, 24, 152, 84
+ CONTROL "Default logon &user name", 101, "static", SS_LEFT | WS_CHILD | WS_VISIBLE, 8, 36, 144, 9
+ CONTROL "", IDC_EDIT_USERNAME, "edit", ES_LEFT | ES_AUTOHSCROLL | WS_CHILD | WS_VISIBLE | WS_BORDER | WS_TABSTOP, 8, 45, 144, 12
+ CONTROL "Default user's &password", 103, "static", SS_LEFT | WS_CHILD | WS_VISIBLE, 8, 59, 144, 9
+ CONTROL "", IDC_EDIT_PASSWORD, "edit", ES_LEFT | ES_AUTOHSCROLL | ES_PASSWORD | WS_CHILD | WS_VISIBLE | WS_BORDER | WS_TABSTOP, 8, 68, 144, 12
+ CONTROL "Default logon &domain", 201, "static", SS_LEFT | WS_CHILD | WS_VISIBLE, 8, 83, 144, 9
+ CONTROL "", IDC_EDIT_DOMAIN, "edit", ES_LEFT | ES_AUTOHSCROLL | ES_UPPERCASE | WS_CHILD | WS_VISIBLE | WS_BORDER | WS_TABSTOP, 8, 92, 144, 12
+ CONTROL "Window stations and user sessions", 202, "button", BS_GROUPBOX | WS_CHILD | WS_VISIBLE | WS_GROUP, 164, 0, 148, 108
+ CONTROL "Default user session i&nit applications", IDC_STATICTEXT2, "static", SS_LEFT | WS_CHILD | WS_VISIBLE, 168, 12, 132, 9
+ CONTROL "", IDC_EDIT_USERINIT, "edit", ES_LEFT | ES_AUTOHSCROLL | WS_CHILD | WS_VISIBLE | WS_BORDER | WS_TABSTOP, 168, 21, 140, 12
+ CONTROL "Default shell appl&ication", 203, "static", SS_LEFT | WS_CHILD | WS_VISIBLE, 168, 35, 132, 9
+ CONTROL "", IDC_EDIT_SHELL, "edit", ES_LEFT | ES_AUTOHSCROLL | WS_CHILD | WS_VISIBLE | WS_BORDER | WS_TABSTOP, 168, 44, 140, 12
+ CONTROL "Run logon s&cripts synchronously", IDC_CHK_RUN_SCRIPTS_SYNC, "button", BS_AUTO3STATE | WS_CHILD | WS_VISIBLE | WS_TABSTOP, 168, 59, 128, 9
+ CONTROL "Allow &multiple logon sessions", IDC_CHK_ALLOW_MULTISESS, "button", BS_AUTO3STATE | WS_CHILD | WS_VISIBLE | WS_TABSTOP, 168, 71, 116, 9
+ CONTROL "Disable loc&k workstation", IDC_CHK_DISABLE_LOCK_WKS, "button", BS_AUTO3STATE | WS_CHILD | WS_VISIBLE | WS_TABSTOP, 168, 83, 116, 9
+ CONTROL "Au&to restart shell application", IDC_CHK_AUTO_RESTART_SHELL, "button", BS_AUTO3STATE | WS_CHILD | WS_VISIBLE | WS_TABSTOP, 168, 95, 116, 9
+ CONTROL "Logon dialog", 207, "button", BS_GROUPBOX | WS_CHILD | WS_VISIBLE | WS_GROUP, 4, 112, 308, 36
+ CONTROL "Enable shutd&own or reboot from logon dialog", IDC_CHK_ENABLE_SHUTDOWN, "button", BS_AUTO3STATE | WS_CHILD | WS_VISIBLE | WS_TABSTOP, 8, 124, 156, 9
+ CONTROL "Sho&w options in logon dialog", IDC_CHK_SHOW_ADV, "button", BS_AUTO3STATE | WS_CHILD | WS_VISIBLE | WS_TABSTOP, 168, 124, 136, 9
+ CONTROL "Do not display &last logged on user name", IDC_CHK_DISABLE_LAST_USER, "button", BS_AUTO3STATE | WS_CHILD | WS_VISIBLE | WS_TABSTOP, 8, 136, 156, 9
+ CONTROL "Ctrl+Alt+Delete &required to logon", IDC_CHK_CAD_REQUIRED, "button", BS_AUTO3STATE | WS_CHILD | WS_VISIBLE | WS_TABSTOP, 168, 136, 136, 9
+ CONTROL "Auto logon", 206, "button", BS_GROUPBOX | WS_CHILD | WS_VISIBLE | WS_GROUP, 4, 152, 156, 48
+ CONTROL "Enable default user &auto logon", IDC_CHK_ENABLE_AUTOLOG, "button", BS_AUTOCHECKBOX | WS_CHILD | WS_VISIBLE | WS_TABSTOP, 8, 164, 116, 9
+ CONTROL "Enable &shift key to bypass auto logon", IDC_CHK_ENABLE_SHIFT, "button", BS_AUTOCHECKBOX | WS_CHILD | WS_VISIBLE | WS_TABSTOP, 8, 176, 140, 9
+ CONTROL "Force settin&gs to be saved across reboots", IDC_CHK_FORCE_AUTOLOGON, "button", BS_AUTO3STATE | WS_CHILD | WS_VISIBLE | WS_TABSTOP, 8, 188, 148, 9
+ CONTROL "Windows file protection", IDC_GROUP_WFP, "button", BS_GROUPBOX | WS_CHILD | WS_VISIBLE | WS_GROUP, 168, 152, 144, 48
+ CONTROL "Disable &real-time system file protection", IDC_CHK_DISABLE_WFP, "button", BS_AUTOCHECKBOX | WS_CHILD | WS_VISIBLE | WS_TABSTOP, 172, 164, 136, 9
+ CONTROL "Limit dllcache disk si&ze (blank = unlimited)", IDC_STAT_WFP_LIMIT, "static", SS_LEFT | WS_CHILD | WS_VISIBLE, 172, 175, 136, 9
+ CONTROL "", IDC_EDIT_WFP_LIMIT, "edit", ES_LEFT | ES_AUTOHSCROLL | ES_NUMBER | WS_CHILD | WS_VISIBLE | WS_BORDER | WS_TABSTOP, 172, 184, 136, 12
+}
+
+IDM_MAINDLG_MENU MENU 
+{
+ POPUP "&File"
+ {
+  MENUITEM "&Open local computer", CM_FILE_OPENLOCAL
+  MENUITEM "Open &remote computer...", CM_FILE_OPENREMOTE
+  MENUITEM "&Save changes", CM_FILE_SAVE, GRAYED
+  MENUITEM SEPARATOR
+  MENUITEM "&Exit", CM_FILE_EXIT
+ }
+
+ POPUP "&Edit"
+ {
+  MENUITEM "&Hide password characters while typing", CM_EDIT_PROT_PWD, CHECKED
+ }
+
+ POPUP "&Help"
+ {
+  MENUITEM "&Contents", CM_HELP_CONTENTS
+  MENUITEM "&Introduction", CM_HELP_INTRO
+  MENUITEM "&How to use help", CM_HELP_HELPONHELP
+  MENUITEM SEPARATOR
+  MENUITEM "&About...", CM_HELP_ABOUT
+ }
+
+}
+
+IDD_SEL_COMPUTER DIALOG 0, 0, 240, 46
+STYLE DS_MODALFRAME | DS_3DLOOK | DS_CONTEXTHELP | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "Select remote computer"
+FONT 8, "MS Sans Serif"
+{
+ CONTROL "&Remote computer name", 210, "static", SS_LEFT | WS_CHILD | WS_VISIBLE, 4, 4, 200, 9
+ CONTROL "", IDC_EDIT_COMPUTER, "edit", ES_LEFT | ES_AUTOHSCROLL | WS_CHILD | WS_VISIBLE | WS_BORDER | WS_TABSTOP, 4, 13, 220, 12
+ CONTROL "...", IDC_BTN_BROWSE_COMPUTER, "button", BS_PUSHBUTTON | BS_CENTER | WS_CHILD | WS_VISIBLE | WS_TABSTOP, 222, 13, 12, 12
+ CONTROL "OK", IDOK, "BUTTON", BS_DEFPUSHBUTTON | BS_CENTER | WS_CHILD | WS_VISIBLE | WS_DISABLED | WS_TABSTOP, 128, 28, 50, 14
+ CONTROL "Cancel", IDCANCEL, "BUTTON", BS_PUSHBUTTON | BS_CENTER | WS_CHILD | WS_VISIBLE | WS_TABSTOP, 184, 28, 50, 14
+}

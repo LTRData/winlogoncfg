@@ -1,0 +1,12 @@
+:Base winlogoncfg.hlp
+:Title Winlogon Configuration Tool Help
+1 Indroduction=IDH_INTRO
+1 Settings
+2 Logon defaults=IDH_LOGON_DEFAULTS
+2 Window stations=IDH_WINDOW_STATIONS
+2 Logon dialog=IDH_LOGON_DIALOG
+2 Auto logon=IDH_AUTOLOGON
+2 Windows File Protection=IDH_WFP
+1 How-to
+2 Enable auto logon=IDH_HOWTO_AUTOLOG
+2 Change settings on remote computers=IDH_HOWTO_REMOTE
