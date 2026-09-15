@@ -430,7 +430,7 @@ SaveSettings(HWND hWnd)
 			     (CONST BYTE *) wcDisable, sizeof wcDisable);
       break;
     default:
-      lErrNo = RegDeleteValue(hKey, L"IgnoreShiftOverride");
+      lErrNo = RegDeleteValue(hKey, L"ForceAutoLogon");
     }
   if ((lErrNo != NO_ERROR) & (lErrNo != ERROR_FILE_NOT_FOUND))
     lLastErrNo = lErrNo;
